@@ -9,9 +9,7 @@ def is_map_or_atoms(session, atomspec):
     from chimerax.map import MapsArg
     from chimerax.atomic import AtomicStructureArg
     a = AtomicStructureArg()
-    print('test')
     atoms = a.parse(atomspec.spec, session)
-    print('test2')
     if len(atoms[0].atoms) == 0:
         m = MapsArg()
         map = m.parse(atomspec.spec, session)
