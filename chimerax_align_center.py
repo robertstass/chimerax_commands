@@ -4,7 +4,6 @@
 import os
 import numpy as np
 
-#Working progress...
 def define_centroid(session, atoms, mass_weighting=False): # from cmd_centroid
     from chimerax.core.errors import UserError
     from chimerax.centroids import centroid

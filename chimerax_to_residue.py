@@ -228,5 +228,5 @@ def create_button_panel():
     run(session, cmd)
 
 
-
+#Comment out the below function to remove button panel
 create_button_panel()
