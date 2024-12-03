@@ -1,0 +1,8 @@
+open ./chimerax_molmap_cube.py
+open ./chimerax_soft_edge_mask.py
+open ./chimerax_align_center.py
+open ./chimerax_map_eraser_mask_create.py
+open ./chimerax_rough_fitmap.py
+open ./chimerax_fit_opposite_hand.py
+open ./chimerax_to_residue.py
+open ./chimerax_reload_scripts.py
