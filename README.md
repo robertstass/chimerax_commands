@@ -91,7 +91,7 @@ reload scripts
 Download the git repository. Open ChimeraX and go to Favourites -> Settings -> Startup.  
 Add the following to the "Execute these commands at startup" box:  
 ```
-<full path to>/chimerax_custom_functions.cxc  
+open <full path to>/chimerax_custom_functions.cxc  
 ```
 where `<full path to>` is the full path to the repository location.  
 Then restart chimeraX.
