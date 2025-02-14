@@ -6,4 +6,3 @@ open ./chimerax_rough_fitmap.py
 open ./chimerax_fit_opposite_hand.py
 open ./chimerax_to_residue.py
 open ./chimerax_reload_scripts.py
-#test
