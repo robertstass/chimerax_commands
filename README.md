@@ -1,6 +1,6 @@
 # Custom ChimeraX functions
 Commands to add extra functionality to ChimeraX.  
-Written by Robert Stass, Bowden group, STRUBI/OPIC (2024)
+Written by Robert Stass, Bowden group, STRUBI/OPIC (2025)
 
 ## soft edge mask
 Add a soft edge to a mask. This binarizes a mask, extends it and adds a raised cosine soft edge. This is equivalent to relion's relion_mask_create function and CryoSPARC's Volume tools job but works directly in ChimeraX.  
