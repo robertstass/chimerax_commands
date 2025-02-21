@@ -1,5 +1,5 @@
 #Commands to add extra functionality to ChimeraX.
-#Written by Robert Stass, Bowden group, STRUBI/OPIC (2024)
+#Written by Robert Stass, Bowden group, STRUBI/OPIC (2025)
 
 import os
 
