@@ -1,5 +1,6 @@
 # Custom ChimeraX functions
-Commands to add extra functionality to ChimeraX.  
+Commands to add extra functionality to ChimeraX.
+Installation instructions can be found at the end of this file.
 Written by Robert Stass, Bowden group, STRUBI/OPIC (2025)
 
 ## soft edge mask
