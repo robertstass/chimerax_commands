@@ -64,6 +64,9 @@ def align_sym_axis(session, atoms, sym, MoveToOrigin=True):
     else:
         raise UserError(f"Cannot parse symmetry from {sym}. Should be C2 or C3 ect.")
 
+    if cyclic_sym < 3:
+        raise UserError(f"Symmetries less than C3 currently not supported.")
+
     num_atoms = len(atoms)
     print(f"Number of atoms: {num_atoms}")
 
