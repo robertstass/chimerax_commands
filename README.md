@@ -77,6 +77,12 @@ or
 map eraser mask create mask #1 sphere #2 width 12 save_masks True
 ```
 To automatically save the masks too. (File names can also be specified with file_root, sphere_append and full_append options). 
+## align symmetry axis
+Align the symmetry axis of a model to the Z axis. Cyclic symmetry only. To do this, you must supply specific atoms that define a plane perpendicular to the symmetry axis. For example, for C3 symmetry, supply 3 atoms with an atomspec such as #1/A-C:383@ca . For C4+ symmetries, these atoms must be co-planar. The script will only be as accurate as the atoms you supply, so choose wisely.  
+Usage:  
+```commandline
+align symmetry axis #1/A-C:383@ca c3
+```
 ## Residue shortcuts
 A collection of commands including "to residue", "previous residue", "next residue", "first residue" and "last residue" to identify and scroll through residues of a chain. Additionally a button panel is created for quick access to each of these commands. 
 
