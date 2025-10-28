@@ -230,15 +230,10 @@ def create_button_panel():
 
 
 
-try:
-    # We are inside GUI ChimeraX
-    from chimerax.ui.gui import UI
+from chimerax.ui.gui import UI
+if type(session.ui) == UI:
     # Comment out the below function to remove button panel
     create_button_panel()
-except (ModuleNotFoundError, ImportError):
-    # We could be in NoGUI ChimeraX
-    try:
-        from chimerax.core.nogui import UI
-        print('ChimeraX in --nogui mode.')
-    except (ModuleNotFoundError, ImportError):
-        pass
+else:
+    print('ChimeraX in --nogui mode.')
+
