@@ -90,6 +90,15 @@ Start by making an atomic selection with ctrl+click/drag or with the select comm
 
 The button panel can be moved into the top bar of ChimeraX. Right click the panel and select "Save tool position" to save the location for future sessions. If you don't want the button panel, comment out the call to create_button_panel() at the end of the chimerax_to_residue.py script. 
 
+## Model shortcuts
+A collection of commands including "next model", "previous model" to cycle through models. Additionally a button panel is created for quick access. 
+
+An additional command can be used to keep model(s) always visible while cycling the rest.
+```commandline
+cycle models fix #1
+```
+The button panel can be moved into the top bar of ChimeraX. Right click the panel and select "Save tool position" to save the location for future sessions. If you don't want the button panel, comment out the call to create_button_panel() at the end of the chimerax_cycle_models.py script. 
+
 ## reload scripts 
 Reload all the scripts above. This is useful if you edit the scripts themselves and want chimeraX to load the new version without restarting the whole program. It will reload all startup commands (see installation below).
 ```

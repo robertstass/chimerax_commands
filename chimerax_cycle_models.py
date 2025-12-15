@@ -4,14 +4,28 @@
 import os
 import numpy as np
 
-
+always_visible_model_ids = []
 
 def cycle_models(session, cycle_by):
     top_level_model_indices = [i for i,model in enumerate(session.models) if len(model.id) == 1]
+
+    always_visible_model_indices = [model_index for model_index in top_level_model_indices if
+                             session.models[model_index].id[0] in always_visible_model_ids]
+    always_visible_models = [session.models[model_index] for model_index in always_visible_model_indices]
+
+    top_level_model_indices = [x for x in top_level_model_indices if x not in always_visible_model_indices]
+
+    if len(always_visible_models) > 0:
+        print("Always visible models (Remove with 'cycle models fix #0'):")
+        print(always_visible_model_ids)
+
+
     num_models = len(top_level_model_indices)
 
     visible_models = [session.models[model_index].visible for model_index in top_level_model_indices]
     visible_indices = [i for i, x in enumerate(visible_models) if x]
+
+
 
     if all(visible_models):
         index = 0
@@ -36,6 +50,10 @@ def cycle_models(session, cycle_by):
     [model._set_display(True) for model in session.models[top_level_model_indices[index]].child_models()]
 
 
+    for always_visible_model in always_visible_models:
+        always_visible_model._set_display(True)
+        [model._set_display(True) for model in always_visible_model.child_models()]
+
 
 def next_model(session):
     cycle_models(session, 1)
@@ -43,10 +61,16 @@ def next_model(session):
 def previous_model(session):
     cycle_models(session, -1)
 
+def cycle_models_fix(session, models):
+    objects = models.models
+    global always_visible_model_ids
+    always_visible_model_ids = [model.id[0] for model in objects if len(model.id) == 1]
+    print("Models set to always show:")
+    print(always_visible_model_ids)
+
 
 def register_command(logger):
     from chimerax.core.commands import CmdDesc, register, BoolArg
-
 
     desc = CmdDesc(
         required=[],
@@ -69,6 +93,20 @@ def register_command(logger):
         synopsis='Show previous model.')
     register('previous model', desc, previous_model, logger=logger)
 
+
+register_command(session.logger)
+
+
+
+def register_command(logger):
+    from chimerax.core.commands import CmdDesc, register, BoolArg, ObjectsArg
+
+    desc = CmdDesc(
+        required=[('models', ObjectsArg)], #map or atoms
+        keyword=[],
+        required_arguments=[],
+        synopsis='Fix model/models to always show.')
+    register('cycle models fix ', desc, cycle_models_fix, logger=logger)
 
 register_command(session.logger)
 
