@@ -8,3 +8,4 @@ open ./chimerax_to_residue.py
 open ./chimerax_reload_scripts.py
 open ./chimerax_align_symmetry_axis.py
 open ./chimerax_cycle_models.py
+open ./chimerax_atom_inclusion.py
