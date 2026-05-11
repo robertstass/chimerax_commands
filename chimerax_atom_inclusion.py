@@ -6,6 +6,8 @@ import numpy as np
 
 def in_contour(atoms, volume, stats):
     points = atoms.scene_coords
+    if len(points) == 0:
+        raise ValueError("No atoms in selection.")
     from chimerax.geometry import identity
     from chimerax.map_fit import fitmap as FM
     poc, clevel = FM.points_outside_contour(points, identity(), volume)
