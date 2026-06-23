@@ -9,3 +9,5 @@ open ./chimerax_reload_scripts.py
 open ./chimerax_align_symmetry_axis.py
 open ./chimerax_cycle_models.py
 open ./chimerax_atom_inclusion.py
+open ./chimerax_selection_to_csv.py
+open ./chimerax_clip_list_relative.py

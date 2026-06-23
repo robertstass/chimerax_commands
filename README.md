@@ -83,6 +83,24 @@ Usage:
 ```commandline
 align symmetry axis #1/A-C:383@ca c3
 ```
+## selectiontocsv
+A script to output the current residue selection to a csv file. This includes coordinates in an output image.  
+Usage:  
+```commandline
+selectiontocsv sel.csv width 700 height 700
+~sel; save sel.png format png width 700 height 700
+```
+## cliplistrelative
+Return the current clipping plane relative to a model.  
+Usage:
+```commandline
+cliplistrelative coordinateSystem #1 position 0,0,0
+```
+Then apply the result with:  
+```commandline
+clip near -32 far -10 coordinateSystem #1 position 0,0,0
+```
+
 ## Residue shortcuts
 A collection of commands including "to residue", "previous residue", "next residue", "first residue" and "last residue" to identify and scroll through residues of a chain. Additionally a button panel is created for quick access to each of these commands. 
 
