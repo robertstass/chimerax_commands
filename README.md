@@ -84,12 +84,13 @@ Usage:
 align symmetry axis #1/A-C:383@ca c3
 ```
 ## selectiontocsv
-A script to output the current residue selection to a csv file. This includes coordinates in an output image.  
+A script to output the current residue selection to a csv file. This includes coordinates in an output image.   
 Usage:  
 ```commandline
 selectiontocsv sel.csv width 700 height 700
 ~sel; save sel.png format png width 700 height 700
 ```
+(an attributes tag can be used to write one row per atom, residue, chain or model.)
 ## cliplistrelative
 Return the current clipping plane relative to a model.  
 Usage:
@@ -99,6 +100,16 @@ cliplistrelative coordinateSystem #1 position 0,0,0
 Then apply the result with:  
 ```commandline
 clip near -32 far -10 coordinateSystem #1 position 0,0,0
+```
+
+## moviekey
+Write named timestamps for keyframes in a recorded movie to a csv file. 
+```commandline
+moviekey start keyframes.csv framerate 25
+moviekey mark start
+moviekey mark myevent
+moviekey write
+moviekey stop
 ```
 
 ## Residue shortcuts
