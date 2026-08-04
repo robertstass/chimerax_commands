@@ -112,6 +112,37 @@ moviekey write
 moviekey stop
 ```
 
+## selectiontochromakey
+
+Save the current selection as a flat-colour PNG image for chromakeying or segmentation. Unselected atoms, cartoons and surfaces are coloured to match the background.
+
+Usage:
+
+```commandline
+selectiontochromakey selection.png width 900 height 700
+```
+
+Specify the selection and background colours:
+
+```commandline
+selectiontochromakey selection.png color #00FF00 background_color #FFFFFF
+```
+
+Include a selection outline:
+
+```commandline
+selectiontochromakey selection.png highlight true highlight_color black highlight_thickness 6
+```
+
+Save with a visible background instead of transparency:
+
+```commandline
+selectiontochromakey selection.png transparentBackground false
+```
+
+By default, the selection is coloured `#00FF00` on a `#FFFFFF` background. Original colours, lighting, silhouettes and selection highlighting are restored after saving.
+
+
 ## Residue shortcuts
 A collection of commands including "to residue", "previous residue", "next residue", "first residue" and "last residue" to identify and scroll through residues of a chain. Additionally a button panel is created for quick access to each of these commands. 
 

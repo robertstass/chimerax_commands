@@ -12,3 +12,4 @@ open ./chimerax_atom_inclusion.py
 open ./chimerax_selection_to_csv.py
 open ./chimerax_clip_list_relative.py
 open ./chimerax_movie_keyframes.py
+open ./chimerax_selection_to_chromakey.py
